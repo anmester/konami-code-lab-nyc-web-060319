@@ -11,6 +11,20 @@ const codes = [
   "a"
 ];
 
+let konamiIndex = 0;
+
 function init() {
-  // your code here
+  document.body.addEventListener('keydown', function(event) {
+    const key = event.key
+    if (key === codes[konamiIndex]) {
+      konamiIndex++;
+      if (konamiIndex === codes.length) {
+        alert('u solved konami!');
+        konamiIndex = 0;
+      }
+    }
+    else {
+      konamiIndex = 0;
+    }
+  });
 }
